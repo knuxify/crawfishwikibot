@@ -36,7 +36,7 @@ def post_to_webhook(webhook_url: str, content: str):
     r = requests.post(webhook_url, data={
         "content": content
     }, headers=HEADERS)
-    if r.status_code != 200:
+    if r.status_code != 204:
         logger.error(f"Failed to post to webhook: {r.status_code}")
 
 
