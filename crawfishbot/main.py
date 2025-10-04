@@ -67,7 +67,7 @@ def mainloop():
         to_parse = []
         for entry in d.entries:
             entry_id = int(entry.guid.split("/")[-1])
-            if entry_id < state["last_post_id"]:
+            if entry_id <= state["last_post_id"]:
                 break
             to_parse.insert(0, entry)
 
