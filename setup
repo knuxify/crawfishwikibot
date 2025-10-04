@@ -1,0 +1,4 @@
+#!/bin/sh
+pwb generate_family_file.py https://crawfish.dissonant.dev/wiki/Main_Page crawfish n n
+pwb generate_user_files.py
+pwb login

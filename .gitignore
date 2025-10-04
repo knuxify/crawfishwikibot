@@ -1,0 +1,24 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Configuration/state
+config.toml
+state.json
+
+# pywikibot stuff
+apicache/
+build/
+families/
+logs/
+throttle.ctrl
+user-password.py
+user-config.py
+pywikibot-*.lwp
