@@ -41,7 +41,8 @@ def post_to_webhook(webhook_url: str, content: str):
 
 
 def mainloop():
-    webhook = config["discord_webhook_url"]
+    webhook = config["discord"]["webhook_url"]
+    comic_ping_role_id = config["discord"]["comic_ping_role_id"]
     retry_timeout = config.get("retry_timeout", 30)
     refresh_timeout = config.get("refresh_timeout", 600)
 
@@ -81,7 +82,7 @@ def mainloop():
 
             # Every comic has the tags "CrawfishComic" and a date tag.
             if "crawfishcomic" in tags:
-                post_to_webhook(webhook, f"New comic from crawfishcomic: {entry.link.replace('tumblr.com', 'tpmblr.com')}")
+                post_to_webhook(webhook, f"<@{comic_ping_role_id}> New comic from crawfishcomic: {entry.link.replace('tumblr.com', 'tpmblr.com')}")
 
                 # Create a wiki page for the comic.
                 try:

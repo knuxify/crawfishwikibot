@@ -1,0 +1,9 @@
+[discord]
+webhook_url = "https://discord.com/api/webhooks/..."
+comic_ping_role_id = 123456789
+
+[tumblr]
+consumer_key = ""
+consumer_secret = ""
+oauth_token = ""
+oauth_secret = ""
