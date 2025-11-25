@@ -104,6 +104,9 @@ def mainloop():
             else:
                 post_to_webhook(webhook, f"New post from crawfishcomic: {entry.link}")
 
+            # Update the last checked post ID
+            state["last_post_id"] = int(entry.guid.split("/")[-1])
+
         save_state(state)
 
         time.sleep(refresh_timeout)
