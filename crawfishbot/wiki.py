@@ -175,6 +175,9 @@ def make_wiki_page(post_url: str) -> str:
         is_video=is_video,
     )
 
+    # Log into the site again
+    site.login()
+
     # Create the wiki page
     if comic.is_video:
         number_str = f"Video {comic.number}"
