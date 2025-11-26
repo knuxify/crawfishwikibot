@@ -97,8 +97,10 @@ def mainloop():
                         webhook,
                         f"Bot failed to make wiki page for comic ({e}); manual intervention is needed. See https://crawfish.dissonant.dev/wiki/CrawfishWiki:Writing_pages#Adding_a_new_comic.",
                     )
-
-                post_to_webhook(webhook, f"Comic on the crawfishcomic wiki: {wiki_url}")
+                else:
+                    post_to_webhook(
+                        webhook, f"Comic on the crawfishcomic wiki: {wiki_url}"
+                    )
 
             # Posts without the CrawfishComic tag are usually singular, simple posts.
             else:
