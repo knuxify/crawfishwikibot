@@ -80,11 +80,13 @@ def mainloop():
                 # Some posts have no tags.
                 tags = []
 
+            link_fxtumblr = entry.link.replace("tumblr.com", "tpmblr.com")
+
             # Every comic has the tags "CrawfishComic" and a date tag.
             if "crawfishcomic" in tags and "deleting later" not in tags:
                 post_to_webhook(
                     webhook,
-                    f"<@&{comic_ping_role_id}> New comic from crawfishcomic: {entry.link.replace('tumblr.com', 'tpmblr.com')}",
+                    f"<@&{comic_ping_role_id}> New comic from crawfishcomic: {link_fxtumblr}",
                 )
 
                 # Create a wiki page for the comic.
@@ -104,7 +106,9 @@ def mainloop():
 
             # Posts without the CrawfishComic tag are usually singular, simple posts.
             else:
-                post_to_webhook(webhook, f"New post from crawfishcomic: {entry.link}")
+                post_to_webhook(
+                    webhook, f"New post from crawfishcomic: {link_fxtumblr}"
+                )
 
             # Update the last checked post ID
             state["last_post_id"] = int(entry.guid.split("/")[-1])
