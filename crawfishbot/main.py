@@ -81,10 +81,10 @@ def mainloop():
                 tags = []
 
             # Every comic has the tags "CrawfishComic" and a date tag.
-            if "crawfishcomic" in tags:
+            if "crawfishcomic" in tags and "deleting later" not in tags:
                 post_to_webhook(
                     webhook,
-                    f"<@{comic_ping_role_id}> New comic from crawfishcomic: {entry.link.replace('tumblr.com', 'tpmblr.com')}",
+                    f"<@&{comic_ping_role_id}> New comic from crawfishcomic: {entry.link.replace('tumblr.com', 'tpmblr.com')}",
                 )
 
                 # Create a wiki page for the comic.
